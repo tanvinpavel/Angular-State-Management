@@ -10,13 +10,17 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
+import { VideoDetailsComponent } from './pages/video-details/video-details.component';
+import { SafePipe } from './pipe/safe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    VideoDetailsComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

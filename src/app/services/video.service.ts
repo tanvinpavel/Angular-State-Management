@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { Videos } from '../model/type';
+import { Video } from '../model/type';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,11 @@ export class VideoService {
     private http: HttpClient
   ) { }
 
-  getVideo(): Observable<Videos[]>{
-    return this.http.get<Videos[]>('http://localhost:9000/videos', this.httpOptions);
+  getVideos(): Observable<Video[]>{
+    return this.http.get<Video[]>('http://localhost:9000/videos', this.httpOptions);
+  }
+
+  getVideo(id: number): Observable<Video>{
+    return this.http.get<Video>(`http://localhost:9000/videos/${id}`, this.httpOptions);
   }
 }

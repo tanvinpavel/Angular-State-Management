@@ -1,4 +1,4 @@
-import { Videos } from "./../../model/type";
+import { Video } from "./../../model/type";
 import { VideoService } from "./../../services/video.service";
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public videoList: Videos[] = [];
+  public videoList: Video[] = [];
 
   constructor(
     private videoService: VideoService
@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   }
 
   getVideos() {
-    this.videoService.getVideo().subscribe({
+    this.videoService.getVideos().subscribe({
       next: (data) => {
         this.videoList = data;
         console.log(data);
