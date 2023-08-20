@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
-import { Video } from 'src/app/model/type';
+import { Video } from 'src/app/interface/type';
 import { VideoService } from 'src/app/services/video.service';
 
 @Component({
   selector: 'app-video-details',
   templateUrl: './video-details.component.html',
-  styleUrls: ['./video-details.component.scss']
+  styleUrls: ['./video-details.component.scss'],
 })
 export class VideoDetailsComponent implements OnInit {
   public video: Video | undefined;
-  public url: string  = '';
+  public url: string = '';
 
   constructor(
     private route: ActivatedRoute,
-    private videoService: VideoService  ){}
+    private videoService: VideoService
+  ) {}
 
   ngOnInit(): void {
     const queryParams = this.route.snapshot.params;
@@ -33,10 +34,8 @@ export class VideoDetailsComponent implements OnInit {
         console.log(data);
       },
       error: (err) => {
-        console.log(err)
-      }
-    })
+        console.log(err);
+      },
+    });
   }
-
-  
 }

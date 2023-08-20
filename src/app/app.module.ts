@@ -12,6 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { VideoDetailsComponent } from './pages/video-details/video-details.component';
 import { SafePipe } from './pipe/safe.pipe';
+import { VideoState } from './store/state/video.state';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { SafePipe } from './pipe/safe.pipe';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    NgxsModule.forRoot(),
+    NgxsModule.forRoot([VideoState]),
     NgxsReduxDevtoolsPluginModule.forRoot()
   ],
   providers: [],

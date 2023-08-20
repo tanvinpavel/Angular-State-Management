@@ -24,7 +24,7 @@
       <!-- single video -->
       <div
         class="col-span-12 sm:col-span-6 md:col-span-3 duration-300 hover:scale-[1.03]"
-        *ngFor="let video of videoList"
+        *ngFor="let video of videoList$ | async"
       >
         <div class="w-full flex flex-col">
           <div class="relative">
